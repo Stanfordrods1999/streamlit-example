@@ -19,8 +19,7 @@ def video_frame_callback(frame):
   
 ctx = webrtc_streamer(key="example", video_frame_callback=video_frame_callback,
                        media_stream_constraints={"video": {"frameRate": {"ideal": frame_rate}}},
-    video_html_attrs={
-        "style": {"width": "50%", "margin": "0 auto", "border": "5px purple solid"},
+    video_html_attrs=({
         "controls": False,
         "autoPlay": True,
     })
