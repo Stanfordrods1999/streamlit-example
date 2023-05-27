@@ -22,7 +22,7 @@ ctx = webrtc_streamer(key="example", video_frame_callback=video_frame_callback,
     video_html_attrs=({
         "controls": False,
         "autoPlay": True,
-    })
+    }))
 while ctx.state.playing:
   with lock:
     img = img_container["img"]
