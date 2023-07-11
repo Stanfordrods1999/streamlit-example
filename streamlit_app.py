@@ -11,6 +11,7 @@ js_code = """
 window.addEventListener('beforeunload', (event) => {
   event.preventDefault();
   event.returnValue = true;
+  return 1;
   });"""
 
 return_value = st_javascript(js_code)
