@@ -7,15 +7,11 @@ from streamlit_webrtc import webrtc_streamer
 import threading
 from streamlit_javascript import st_javascript
 
-js_code = """window.addEventListener('beforeunload', function(event) {
-  // Check if the user is closing the tab
-  if (!event.clientY) {
-    // User is closing the tab
-    return true;
-    // Perform any necessary actions here
-    // ...
-  }
-});"""
+js_code = """
+window.addEventListener('beforeunload', (event) => {
+  event.preventDefault();
+  event.returnValue = true;
+  });"""
 
 return_value = st_javascript(js_code)
 
